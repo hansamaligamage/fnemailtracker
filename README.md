@@ -74,7 +74,8 @@ private static async Task<bool> CheckForSubscriptionChangesAsync(string subscrip
     bool success = false;
 
     //Get access token from configuration
-    string accessToken = System.Environment.GetEnvironmentVariable("AccessToken", EnvironmentVariableTarget.Process);
+    string accessToken = System.Environment.GetEnvironmentVariable("AccessToken"
+      , EnvironmentVariableTarget.Process);
     log.LogInformation($"accessToken: {accessToken}");
 
      HttpClient client = new HttpClient();
