@@ -85,7 +85,8 @@ private static async Task<bool> CheckForSubscriptionChangesAsync(string subscrip
         "https://graph.microsoft.com/v1.0/" + resource);
      request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
 
-     HttpResponseMessage response = await client.SendAsync(request).ConfigureAwait(continueOnCapturedContext: false);
+     HttpResponseMessage response = await client.SendAsync(request)
+       .ConfigureAwait(continueOnCapturedContext: false);
      log.LogInformation("Outlook API response " + response.ToString());
 
      if (response.IsSuccessStatusCode)
