@@ -32,8 +32,8 @@ public static async Task<HttpResponseMessage> Run(
   
 ### Get the email notifications
 ```
-private static async Task<HttpResponseMessage> ProcessWebhookNotificationsAsync(HttpRequestMessage req, ILogger log,
-    Func<SubscriptionNotification, Task<bool>> processSubscriptionNotification)
+private static async Task<HttpResponseMessage> ProcessWebhookNotificationsAsync(HttpRequestMessage req,
+ILogger log, Func<SubscriptionNotification, Task<bool>> processSubscriptionNotification)
 {
     // Read the body of the request and parse the notification
     string content = await req.Content.ReadAsStringAsync();
